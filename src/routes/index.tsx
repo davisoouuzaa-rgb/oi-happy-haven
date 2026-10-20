@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { ArrowLeft, ArrowRight, Search, ShoppingBag, UserRound, Menu, X, Plus, Minus, Trash2 } from "lucide-react";
+import { ArrowLeft, ArrowRight, Search, ShoppingBag, UserRound, Menu, X, Plus, Minus, Trash2, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -162,6 +162,16 @@ function Index() {
       <footer className="border-t border-black/10 px-4 py-8 text-center md:px-8">
         <span className="text-[10px] tracking-[0.38em] text-black/50">ÉLAN</span>
       </footer>
+
+      <button
+        type="button"
+        aria-label="WhatsApp — configurar número"
+        onClick={() => window.alert("O botão do WhatsApp já está no site. Para ativar a conversa, adicione o número da loja nas configurações do botão.")}
+        className="fixed bottom-5 right-5 z-40 flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-medium text-white shadow-lg transition hover:bg-[#1fb958] hover:shadow-xl md:bottom-7 md:right-7"
+      >
+        <MessageCircle size={21} strokeWidth={2} />
+        <span>WhatsApp</span>
+      </button>
 
       {cartOpen && (
         <div className="fixed inset-0 z-50">
